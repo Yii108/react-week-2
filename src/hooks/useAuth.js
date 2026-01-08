@@ -1,7 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
-
-const API_BASE = import.meta.env.VITE_API_BASE;
+import { API_ENDPOINTS, apiClient } from "../config/api";
 
 /**
  * 自定義認證 Hook
@@ -20,14 +18,11 @@ export const useAuth = () => {
     setError(null);
 
     try {
-      const response = await axios.post(`${API_BASE}/admin/signin`, formData);
+      const response = await apiClient.post(API_ENDPOINTS.LOGIN, formData);
       const { token, expired } = response.data;
 
       // 儲存 token 到 cookie
       document.cookie = `hexToken=${token};expires=${new Date(expired)};`;
-
-      // 設定預設請求標頭
-      axios.defaults.headers.common.Authorization = token;
 
       setIsAuth(true);
       return { success: true };
@@ -55,9 +50,7 @@ export const useAuth = () => {
         return false;
       }
 
-      axios.defaults.headers.common.Authorization = token;
-
-      const res = await axios.post(`${API_BASE}/api/user/check`);
+      const res = await apiClient.post(API_ENDPOINTS.CHECK_AUTH);
       console.log("登入驗證成功:", res.data);
       return true;
     } catch (err) {
@@ -71,7 +64,6 @@ export const useAuth = () => {
    */
   const logout = () => {
     document.cookie = "hexToken=;expires=Thu, 01 Jan 1970 00:00:00 GMT;";
-    delete axios.defaults.headers.common.Authorization;
     setIsAuth(false);
   };
 

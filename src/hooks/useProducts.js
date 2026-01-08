@@ -1,8 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
-
-const API_BASE = import.meta.env.VITE_API_BASE;
-const API_PATH = import.meta.env.VITE_API_PATH;
+import { apiClient, API_ENDPOINTS } from "../config/api";
 
 /**
  * 自定義產品管理 Hook
@@ -21,9 +18,7 @@ export const useProducts = () => {
     setError(null);
 
     try {
-      const response = await axios.get(
-        `${API_BASE}/api/${API_PATH}/admin/products`
-      );
+      const response = await apiClient.get(API_ENDPOINTS.PRODUCTS);
       setProducts(response.data.products);
       return { success: true, data: response.data.products };
     } catch (err) {
