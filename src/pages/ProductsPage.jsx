@@ -84,7 +84,7 @@ const ProductsPage = () => {
 
         {/* 右側：產品細節 */}
         <div className="col-md-6">
-          <ProductDetail product={tempProduct} />
+          <ProductDetail key={tempProduct?.id} product={tempProduct} />
         </div>
       </div>
     </div>
