@@ -177,3 +177,30 @@ img:hover {
 .gap-2 {
   gap: 0.5rem;
 }
+
+/* ==================== 頁面標題區 ==================== */
+.container h1 {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.container h2 {
+  color: #34495e;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* ==================== 按鈕群組 ==================== */
+.btn-group .btn {
+  font-size: 0.9rem;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
