@@ -1,0 +1,179 @@
+/* ==================== 全域樣式設定 ==================== */
+html,
+body {
+  height: 100%;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ==================== 登入頁面 ==================== */
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.login h1 {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.login .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 登入表單樣式 */
+.form-signin {
+  width: 100%;
+  max-width: 380px;
+  padding: 2rem;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.form-signin .alert {
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+/* ==================== 圖片樣式 ==================== */
+img {
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* 產品主圖樣式 */
+.primary-image {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+/* 產品副圖樣式 */
+.images {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+}
+
+.images:hover {
+  border-color: #0d6efd;
+}
+
+/* ==================== 產品卡片 ==================== */
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ==================== 表格樣式 ==================== */
+.table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table thead {
+  background: #f8f9fa;
+}
+
+.table thead th {
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  color: #495057;
+  padding: 1rem 0.75rem;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* ==================== 按鈕樣式 ==================== */
+.btn {
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #63368d 100%);
+}
+
+/* ==================== 響應式設計 ==================== */
+@media (max-width: 768px) {
+  .primary-image {
+    height: 200px;
+  }
+
+  .images {
+    height: 80px;
+    width: 80px;
+  }
+
+  .form-signin {
+    padding: 1.5rem;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==================== 載入動畫 ==================== */
+.spinner-border {
+  animation: spinner-border 0.75s linear infinite;
+}
+
+/* ==================== 工具類別 ==================== */
+.gap-2 {
+  gap: 0.5rem;
+}
